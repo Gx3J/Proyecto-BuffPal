@@ -1,24 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxmm3spc1j8ci"]
+[gd_scene load_steps=8 format=3 uid="uid://b3orp6t1g4taj"]
 
-[ext_resource type="Shader" path="res://main.gdshader" id="1_xxlyy"]
-[ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_epda2"]
-[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="3_bs41a"]
-[ext_resource type="Texture2D" uid="uid://bqw8hqwnrdvt8" path="res://logobp.png" id="3_mnk28"]
-[ext_resource type="FontFile" uid="uid://pt1666tmlkwu" path="res://fonts/Exo_2/Exo2-VariableFont_wght.ttf" id="5_38eh2"]
+[ext_resource type="Shader" path="res://main.gdshader" id="1_e2ywq"]
+[ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_jcnt3"]
+[ext_resource type="Texture2D" uid="uid://bqw8hqwnrdvt8" path="res://logobp.png" id="3_l6u5l"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_eokkn"]
+[ext_resource type="FontFile" uid="uid://pt1666tmlkwu" path="res://fonts/Exo_2/Exo2-VariableFont_wght.ttf" id="5_588fd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivrlr"]
-shader = ExtResource("1_xxlyy")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bl7t5"]
+shader = ExtResource("1_e2ywq")
 shader_parameter/direction = Vector2(1, 1)
 shader_parameter/speed_scale = 0.05
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6u6u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oudfe"]
 bg_color = Color(0.164706, 0.513726, 0.439216, 0.396078)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Inicio de sesion" type="Control"]
+[node name="Registro" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,11 +36,11 @@ grow_vertical = 2
 color = Color(0.254902, 0.733333, 0.631373, 1)
 
 [node name="TextureRect" type="TextureRect" parent="bg"]
-material = SubResource("ShaderMaterial_ivrlr")
+material = SubResource("ShaderMaterial_bl7t5")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_epda2")
+texture = ExtResource("2_jcnt3")
 stretch_mode = 1
 
 [node name="Logo" type="TextureRect" parent="bg/TextureRect"]
@@ -50,13 +50,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -121.5
-offset_top = -321.5
-offset_right = 121.5
-offset_bottom = -78.5
+offset_left = -121.0
+offset_top = -299.0
+offset_right = 122.0
+offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_mnk28")
+texture = ExtResource("3_l6u5l")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="bg/TextureRect"]
@@ -69,7 +69,7 @@ offset_top = 225.0
 offset_right = 166.0
 offset_bottom = 320.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h6u6u")
+theme_override_styles/panel = SubResource("StyleBoxFlat_oudfe")
 
 [node name="Label" type="Label" parent="bg/TextureRect/Panel"]
 layout_mode = 1
@@ -86,7 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 21
-theme_override_fonts/font = ExtResource("3_bs41a")
+theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 70
 text = "BUFFPAL"
 
@@ -96,11 +96,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -236.0
-offset_top = 609.0
+offset_top = 627.0
 offset_right = 231.0
-offset_bottom = 907.0
+offset_bottom = 1035.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h6u6u")
+theme_override_styles/panel = SubResource("StyleBoxFlat_oudfe")
 
 [node name="Email" type="Label" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
@@ -112,9 +112,10 @@ offset_top = 6.0
 offset_right = 61.0
 offset_bottom = 56.0
 grow_horizontal = 2
+scale = Vector2(1.01545, 1.03479)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_bs41a")
+theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 39
 text = "CORREO"
 
@@ -125,33 +126,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -220.5
-offset_top = -83.0
-offset_right = 221.5
-offset_bottom = -10.0
+offset_left = -221.0
+offset_top = -141.5
+offset_right = 221.0
+offset_bottom = -68.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_38eh2")
+theme_override_fonts/font = ExtResource("5_588fd")
 theme_override_font_sizes/font_size = 22
-
-[node name="Password" type="Label" parent="bg/TextureRect/Panel2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -109.5
-offset_top = -7.0
-offset_right = 109.5
-offset_bottom = 43.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_bs41a")
-theme_override_font_sizes/font_size = 39
-text = "CONTRASEÑA"
+placeholder_text = "Ingresar correo"
+alignment = 1
 
 [node name="LineEdit2" type="LineEdit" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
@@ -161,13 +145,52 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -220.5
-offset_top = 53.0
+offset_top = 5.0
 offset_right = 221.5
-offset_bottom = 126.0
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_38eh2")
+theme_override_fonts/font = ExtResource("5_588fd")
 theme_override_font_sizes/font_size = 22
+placeholder_text = "Ingresar contraseña"
+alignment = 1
+
+[node name="Password2" type="Label" parent="bg/TextureRect/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -58.0
+offset_right = 109.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eokkn")
+theme_override_font_sizes/font_size = 39
+text = "CONTRASEÑA"
+
+[node name="LineEdit3" type="LineEdit" parent="bg/TextureRect/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.5
+offset_top = 95.0
+offset_right = 219.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_588fd")
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Repetir contraseña"
+alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="bg"]
 layout_mode = 1
@@ -177,9 +200,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -121.0
-offset_top = 306.0
+offset_top = 483.0
 offset_right = 121.0
-offset_bottom = 368.0
+offset_bottom = 545.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219608, 0.666667, 0.560784, 1)
@@ -197,6 +220,6 @@ offset_right = 124.0
 offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_bs41a")
+theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 30
-text = "INICIO SESIÓN"
+text = "REGISTRARSE"
