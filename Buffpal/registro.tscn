@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3orp6t1g4taj"]
+[gd_scene load_steps=9 format=3 uid="uid://b3orp6t1g4taj"]
 
 [ext_resource type="Shader" path="res://main.gdshader" id="1_e2ywq"]
+[ext_resource type="Script" path="res://Scripts/authregister.gd" id="1_gayrt"]
 [ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_jcnt3"]
 [ext_resource type="Texture2D" uid="uid://bqw8hqwnrdvt8" path="res://logobp.png" id="3_l6u5l"]
 [ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_eokkn"]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gayrt")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -119,7 +121,7 @@ theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 39
 text = "CORREO"
 
-[node name="LineEdit" type="LineEdit" parent="bg/TextureRect/Panel2"]
+[node name="userEmail" type="LineEdit" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -174,7 +176,7 @@ theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 39
 text = "CONTRASEÑA"
 
-[node name="LineEdit3" type="LineEdit" parent="bg/TextureRect/Panel2"]
+[node name="userPassword" type="LineEdit" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -223,3 +225,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_eokkn")
 theme_override_font_sizes/font_size = 30
 text = "REGISTRARSE"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="bg/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxmm3spc1j8ci"]
+[gd_scene load_steps=9 format=3 uid="uid://cxmm3spc1j8ci"]
 
+[ext_resource type="Script" path="res://Scripts/auth.gd" id="1_qitch"]
 [ext_resource type="Shader" path="res://main.gdshader" id="1_xxlyy"]
 [ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_epda2"]
 [ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="3_bs41a"]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qitch")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
@@ -200,3 +202,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_bs41a")
 theme_override_font_sizes/font_size = 30
 text = "INICIO SESIÓN"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="bg/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
