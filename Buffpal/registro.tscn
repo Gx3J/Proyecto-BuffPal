@@ -194,6 +194,15 @@ theme_override_font_sizes/font_size = 22
 placeholder_text = "Repetir contraseña"
 alignment = 1
 
+[node name="VolverButton" type="Button" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.172
+anchor_bottom = 0.048
+offset_right = 0.159996
+offset_bottom = -0.440002
+text = "Volver"
+
 [node name="ColorRect" type="ColorRect" parent="bg"]
 layout_mode = 1
 anchors_preset = 8
@@ -228,5 +237,6 @@ text = "REGISTRARSE"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[connection signal="pressed" from="bg/TextureRect/VolverButton" to="." method="_on_volver_button_pressed"]
 [connection signal="pressed" from="bg/ColorRect/Button" to="." method="_on_button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

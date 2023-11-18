@@ -17,6 +17,7 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	if (response_code == 200):
 		print(response)
+		get_tree().change_scene_to_file("res://main.tscn")
 	else:
 		print(response.error)	
 
@@ -27,3 +28,7 @@ func _on_button_pressed():
 	var email = $bg/TextureRect/Panel2/userEmail.text
 	var password = $bg/TextureRect/Panel2/userPassword.text
 	_loginSignup(url, email, password)
+
+
+func _on_volver_button_pressed():
+	get_tree().change_scene_to_file("res://seleccion_formulario.tscn")

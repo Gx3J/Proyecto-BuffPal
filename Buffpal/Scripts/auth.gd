@@ -32,3 +32,7 @@ func _on_button_pressed():
 	var email = $bg/TextureRect/Panel2/LineEdit.text
 	var password = $bg/TextureRect/Panel2/LineEdit2.text
 	_loginSignup(url, email, password)
+
+
+func _on_volver_button_pressed():
+	get_tree().change_scene_to_file("res://seleccion_formulario.tscn")
