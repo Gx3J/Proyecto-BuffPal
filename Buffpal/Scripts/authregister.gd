@@ -12,15 +12,14 @@ func _loginSignup(url: String, email: String, password: String):
 	var error = await  http.request(url, headers, HTTPClient.METHOD_POST, body)
 	
 	
-
+	
 func _on_http_request_request_completed(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	if (response_code == 200):
 		print(response)
 		get_tree().change_scene_to_file("res://main.tscn")
 	else:
-		print(response.error)	
-
+		print(response.error)
 
 
 func _on_button_pressed():

@@ -156,6 +156,7 @@ theme_override_fonts/font = ExtResource("5_588fd")
 theme_override_font_sizes/font_size = 22
 placeholder_text = "Ingresar contraseña"
 alignment = 1
+secret = true
 
 [node name="Password2" type="Label" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
@@ -193,6 +194,7 @@ theme_override_fonts/font = ExtResource("5_588fd")
 theme_override_font_sizes/font_size = 22
 placeholder_text = "Repetir contraseña"
 alignment = 1
+secret = true
 
 [node name="VolverButton" type="Button" parent="bg/TextureRect"]
 layout_mode = 1
@@ -201,6 +203,7 @@ anchor_right = 0.172
 anchor_bottom = 0.048
 offset_right = 0.159996
 offset_bottom = -0.440002
+theme_override_fonts/font = ExtResource("4_eokkn")
 text = "Volver"
 
 [node name="ColorRect" type="ColorRect" parent="bg"]
