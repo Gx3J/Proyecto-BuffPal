@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnkt2rahh5th3"]
+[gd_scene load_steps=7 format=3 uid="uid://bnkt2rahh5th3"]
 
 [ext_resource type="Shader" path="res://main.gdshader" id="1_3wipc"]
-[ext_resource type="Script" path="res://Scripts/Startbuttons.gd" id="1_dh053"]
+
 [ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_wdbn2"]
 [ext_resource type="Texture2D" uid="uid://bqw8hqwnrdvt8" path="res://logobp.png" id="3_d4exu"]
 [ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_aa3p4"]
@@ -145,3 +145,4 @@ text = "INICIO SESIÓN"
 
 [connection signal="pressed" from="bg/TextureRect/Panel2/RegisterButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="bg/TextureRect/Panel2/LogInButton" to="." method="_on_button_2_pressed"]
+
