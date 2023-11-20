@@ -12,7 +12,11 @@ func _loginSignup(url: String, email: String, password: String):
 	var error = await  http.request(url, headers, HTTPClient.METHOD_POST, body)
 	
 	
-
+func showErrorMessage(message: String):
+	var errorAuth = $bg/TextureRect/PopupPanel
+	errorAuth.get_node("Label").text = message
+	errorAuth.popup_centered()
+	
 func _on_http_request_request_completed(result, response_code, headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	#If request is ok
@@ -20,7 +24,9 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 		print(response)
 		get_tree().change_scene_to_file("res://home.tscn")
 	else:
-		print(response.error)	
+		print(response.error)
+		showErrorMessage("Credenciales invalidas")
+			
 		
 
 
@@ -32,3 +38,7 @@ func _on_button_pressed():
 	var email = $bg/TextureRect/Panel2/LineEdit.text
 	var password = $bg/TextureRect/Panel2/LineEdit2.text
 	_loginSignup(url, email, password)
+
+
+func _on_volver_button_pressed():
+	get_tree().change_scene_to_file("res://seleccion_formulario.tscn")
