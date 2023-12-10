@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=3 uid="uid://8ar73rngul08"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_bd6rq"]
+[ext_resource type="Script" path="res://Scripts/preguntas.gd" id="1_yne8d"]
+[ext_resource type="Texture2D" uid="uid://cj4o4d586k1nu" path="res://bgm3.png" id="2_nbf3a"]
+[ext_resource type="FontFile" uid="uid://bn84rnc354rmy" path="res://fonts/Exo_2/static/Exo2-Bold.ttf" id="3_tp0ig"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_7bbto"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vx8i"]
+shader = ExtResource("1_bd6rq")
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/speed_scale = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf3ex"]
+bg_color = Color(0.882353, 0.878431, 0.878431, 0.396078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glf5e"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="preguntas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yne8d")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+material = SubResource("ShaderMaterial_3vx8i")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nbf3a")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.5
+offset_top = 31.0
+offset_right = 322.5
+offset_bottom = 689.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hf3ex")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -76.5
+offset_right = 332.5
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_tp0ig")
+theme_override_font_sizes/font_size = 50
+text = "¿Cuántas flexiones de 
+brazo puedes hacer en 
+una serie?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = 26.0
+offset_right = 179.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("4_7bbto")
+theme_override_font_sizes/font_size = 55
+text = "1ra pregunta:"
+
+[node name="Button1" type="Button" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 92.0
+offset_right = 124.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7bbto")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_glf5e")
+text = "0 - 5"
+
+[node name="Button2" type="Button" parent="bg/TextureRect/Button1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 111.0
+offset_right = 124.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7bbto")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_glf5e")
+text = "5 - 10"
+
+[node name="Button3" type="Button" parent="bg/TextureRect/Button1/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 115.5
+offset_right = 124.0
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7bbto")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_glf5e")
+text = "10 +"
+
+[connection signal="pressed" from="bg/TextureRect/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Button1/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Button1/Button2/Button3" to="." method="_on_button_3_pressed"]

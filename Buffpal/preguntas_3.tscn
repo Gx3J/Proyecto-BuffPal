@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=3 uid="uid://bks5fh8t6r1rj"]
+
+[ext_resource type="Script" path="res://Scripts/preguntas_3.gd" id="1_aqg3h"]
+[ext_resource type="Shader" path="res://main.gdshader" id="1_haymu"]
+[ext_resource type="Texture2D" uid="uid://cj4o4d586k1nu" path="res://bgm3.png" id="2_laadf"]
+[ext_resource type="FontFile" uid="uid://bn84rnc354rmy" path="res://fonts/Exo_2/static/Exo2-Bold.ttf" id="3_66ql7"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_rf2sw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4n21v"]
+shader = ExtResource("1_haymu")
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/speed_scale = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6rqi"]
+bg_color = Color(0.882353, 0.878431, 0.878431, 0.396078)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8aobv"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="preguntas3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqg3h")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+material = SubResource("ShaderMaterial_4n21v")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_laadf")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.5
+offset_top = 31.0
+offset_right = 322.5
+offset_bottom = 689.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6rqi")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -94.5
+offset_right = 332.5
+offset_bottom = 94.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_66ql7")
+theme_override_font_sizes/font_size = 50
+text = "¿Cómo te sientes 
+después de realizar 
+actividad física?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = 26.0
+offset_right = 179.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("4_rf2sw")
+theme_override_font_sizes/font_size = 55
+text = "3ra pregunta:"
+
+[node name="Button111" type="Button" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 92.0
+offset_right = 124.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rf2sw")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8aobv")
+text = "Muy cansado/a"
+
+[node name="Button222" type="Button" parent="bg/TextureRect/Button111"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 111.0
+offset_right = 124.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rf2sw")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8aobv")
+text = "Normal"
+
+[node name="Button333" type="Button" parent="bg/TextureRect/Button111/Button222"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 115.5
+offset_right = 124.0
+offset_bottom = 238.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rf2sw")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8aobv")
+text = "Bastante bien"
+
+[connection signal="pressed" from="bg/TextureRect/Button111" to="." method="_on_button_111_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Button111/Button222" to="." method="_on_button_222_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Button111/Button222/Button333" to="." method="_on_button_333_pressed"]

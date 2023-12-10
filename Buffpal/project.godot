@@ -12,8 +12,14 @@ config_version=5
 
 config/name="Buffpal"
 run/main_scene="res://seleccion_formulario.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transicion="*res://canvas_layer.tscn"
+Transicion2="*res://cambio_2.tscn"
+varru="*res://Scripts/varrutina.gd"
 
 [display]
 

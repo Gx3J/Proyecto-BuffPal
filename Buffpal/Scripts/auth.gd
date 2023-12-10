@@ -22,7 +22,7 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	#If request is ok
 	if (response_code == 200):
 		print(response)
-		get_tree().change_scene_to_file("res://home.tscn")
+		Transicion2.change_scene("res://home.tscn")
 	else:
 		print(response.error)
 		showErrorMessage("Credenciales invalidas")
@@ -41,4 +41,4 @@ func _on_button_pressed():
 
 
 func _on_volver_button_pressed():
-	get_tree().change_scene_to_file("res://seleccion_formulario.tscn")
+	Transicion.change_scene("res://seleccion_formulario.tscn")
