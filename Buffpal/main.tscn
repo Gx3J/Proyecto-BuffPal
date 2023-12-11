@@ -148,6 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_38eh2")
 theme_override_font_sizes/font_size = 22
+alignment = 1
 
 [node name="Password" type="Label" parent="bg/TextureRect/Panel2"]
 layout_mode = 1
@@ -184,6 +185,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_38eh2")
 theme_override_font_sizes/font_size = 22
+alignment = 1
 secret = true
 
 [node name="VolverButton" type="Button" parent="bg/TextureRect"]
@@ -206,10 +208,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 395.0
-offset_bottom = 195.0
+offset_left = -195.0
+offset_top = -95.0
+offset_right = 195.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4

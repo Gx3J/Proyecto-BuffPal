@@ -35,5 +35,12 @@ func _ready():
 		$bg/TextureRect/Panel/Label3.text = "PRINCIPIANTE"
 	elif varru.varu == 2:
 		$bg/TextureRect/Panel/Label3.text = "INTERMEDIO"
-	else:
+	elif varru.varu == 3:
 		$bg/TextureRect/Panel/Label3.text = "AVANZADO"
+	else:
+		$bg/TextureRect/Panel/Label3.text = "Cargando..."
+
+
+
+func _on_button_pressed():
+	Transicion3.change_scene("res://loading.tscn")

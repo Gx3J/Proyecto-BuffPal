@@ -1,0 +1,166 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfk0txy2hpt87"]
+
+[ext_resource type="Script" path="res://Scripts/ej_home.gd" id="1_f6ksb"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="1_mwx60"]
+[ext_resource type="Texture2D" uid="uid://coyfqyjjpvkwk" path="res://Icons/tempo.png" id="2_tqnen"]
+[ext_resource type="Texture2D" uid="uid://dbkl3lr1bocq5" path="res://Icons/tempo_pressed.png" id="3_6q3ad"]
+[ext_resource type="Texture2D" uid="uid://b235qa3nhqnri" path="res://Icons/casa.png" id="3_wfdqc"]
+[ext_resource type="Texture2D" uid="uid://dctk7ko0ppfh5" path="res://Icons/trofeo.png" id="4_c48a7"]
+[ext_resource type="Texture2D" uid="uid://dndh1pptcod1l" path="res://Icons/casa_pressed.png" id="5_7iek0"]
+[ext_resource type="Texture2D" uid="uid://cgywo40j3n6ha" path="res://Icons/trofeo_pressed.png" id="7_rau5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmhj6"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qonvv"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[node name="EjHome" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f6ksb")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="Panel" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -176.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmhj6")
+
+[node name="RutinasLabel" type="RichTextLabel" parent="bg/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 24.0
+offset_right = -183.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_mwx60")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] RUTINAS[/shake]"
+scroll_active = false
+
+[node name="RutinasButton" type="TextureButton" parent="bg/Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 123.0
+offset_bottom = 103.0
+texture_normal = ExtResource("2_tqnen")
+texture_pressed = ExtResource("3_6q3ad")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CasaLabel" type="RichTextLabel" parent="bg/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -68.0
+offset_right = 50.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_mwx60")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] CASA[/shake]"
+scroll_active = false
+
+[node name="LogrosLabel" type="RichTextLabel" parent="bg/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 178.5
+offset_top = 18.5
+offset_right = 345.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_mwx60")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] LOGROS[/shake]"
+scroll_active = false
+
+[node name="CasaButton" type="TextureButton" parent="bg/Panel"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 36.0
+offset_right = 393.0
+offset_bottom = 103.0
+texture_normal = ExtResource("3_wfdqc")
+texture_pressed = ExtResource("5_7iek0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LogrosButton" type="TextureButton" parent="bg/Panel"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 36.0
+offset_right = 646.0
+offset_bottom = 103.0
+texture_normal = ExtResource("4_c48a7")
+texture_pressed = ExtResource("7_rau5d")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel2" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1282.0
+offset_bottom = -1106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qonvv")
+
+[connection signal="pressed" from="bg/Panel/RutinasButton" to="." method="_on_rutinas_button_pressed"]
+[connection signal="pressed" from="bg/Panel/LogrosButton" to="." method="_on_logros_button_pressed"]

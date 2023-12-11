@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bks5fh8t6r1rj"]
 
 [ext_resource type="Script" path="res://Scripts/preguntas_3.gd" id="1_aqg3h"]
-[ext_resource type="Shader" path="res://main.gdshader" id="1_haymu"]
+[ext_resource type="Shader" path="res://main.gdshader" id="2_hq8lm"]
 [ext_resource type="Texture2D" uid="uid://cj4o4d586k1nu" path="res://bgm3.png" id="2_laadf"]
 [ext_resource type="FontFile" uid="uid://bn84rnc354rmy" path="res://fonts/Exo_2/static/Exo2-Bold.ttf" id="3_66ql7"]
 [ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="4_rf2sw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4n21v"]
-shader = ExtResource("1_haymu")
+shader = ExtResource("2_hq8lm")
 shader_parameter/direction = Vector2(1, 1)
 shader_parameter/speed_scale = 0.05
 

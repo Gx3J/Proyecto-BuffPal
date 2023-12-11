@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Transicion="*res://canvas_layer.tscn"
 Transicion2="*res://cambio_2.tscn"
 varru="*res://Scripts/varrutina.gd"
+Transicion3="*res://cambio_3.tscn"
+Transicion4="*res://ej_loading.tscn"
 
 [display]
 
@@ -27,6 +29,10 @@ window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

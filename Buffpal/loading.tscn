@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8jypgexgqegk"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_ftoby"]
+[ext_resource type="Script" path="res://Scripts/loading.gd" id="1_p7gxj"]
+[ext_resource type="Texture2D" uid="uid://bl5gboifdd3xr" path="res://bgm2.png" id="2_mp0pu"]
+[ext_resource type="Texture2D" uid="uid://pxis5uqmia4f" path="res://loading.png" id="3_c2jgq"]
+[ext_resource type="Script" path="res://Scripts/rotate.gd" id="4_5ciur"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="5_qq0we"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7w16"]
+shader = ExtResource("1_ftoby")
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/speed_scale = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36utl"]
+bg_color = Color(0.152941, 0.145098, 0.145098, 0.180392)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p7gxj")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+material = SubResource("ShaderMaterial_o7w16")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mp0pu")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.5
+offset_top = -100.5
+offset_right = 98.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_36utl")
+
+[node name="Sapo2" type="Sprite2D" parent="bg/Panel"]
+position = Vector2(96.5, 100.5)
+scale = Vector2(1.0037, 1.0037)
+texture = ExtResource("3_c2jgq")
+script = ExtResource("4_5ciur")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -42.5
+offset_right = 140.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_qq0we")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[wave amp=100 freq=5 ]CARGANDO[/wave]"
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

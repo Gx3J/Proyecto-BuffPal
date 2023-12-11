@@ -1,0 +1,199 @@
+[gd_scene load_steps=14 format=3 uid="uid://c0pecq133rh0v"]
+
+[ext_resource type="Script" path="res://Scripts/ej_loading.gd" id="1_4i8jy"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="1_7bu6k"]
+[ext_resource type="Texture2D" uid="uid://coyfqyjjpvkwk" path="res://Icons/tempo.png" id="2_xtpyi"]
+[ext_resource type="Texture2D" uid="uid://dbkl3lr1bocq5" path="res://Icons/tempo_pressed.png" id="3_m2pq8"]
+[ext_resource type="Texture2D" uid="uid://b235qa3nhqnri" path="res://Icons/casa.png" id="4_364at"]
+[ext_resource type="Texture2D" uid="uid://dndh1pptcod1l" path="res://Icons/casa_pressed.png" id="5_o3r2n"]
+[ext_resource type="Texture2D" uid="uid://dctk7ko0ppfh5" path="res://Icons/trofeo.png" id="6_8ahwi"]
+[ext_resource type="Texture2D" uid="uid://cgywo40j3n6ha" path="res://Icons/trofeo_pressed.png" id="7_7xqrc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj0hp"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ky12e"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="Animation" id="Animation_ltnyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g2okv"]
+resource_name = "transicion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1k0w"]
+_data = {
+"RESET": SubResource("Animation_ltnyt"),
+"transicion": SubResource("Animation_g2okv")
+}
+
+[node name="EjLoading" type="CanvasLayer"]
+script = ExtResource("1_4i8jy")
+
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1282.0
+offset_bottom = -1106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fj0hp")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -176.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ky12e")
+
+[node name="RutinasLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 24.0
+offset_right = -183.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_7bu6k")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] RUTINAS[/shake]"
+scroll_active = false
+
+[node name="RutinasButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 123.0
+offset_bottom = 103.0
+texture_normal = ExtResource("2_xtpyi")
+texture_pressed = ExtResource("3_m2pq8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CasaLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -68.0
+offset_right = 50.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_7bu6k")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] CASA[/shake]"
+scroll_active = false
+
+[node name="LogrosLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 178.5
+offset_top = 18.5
+offset_right = 345.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_7bu6k")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] LOGROS[/shake]"
+scroll_active = false
+
+[node name="CasaButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 36.0
+offset_right = 393.0
+offset_bottom = 103.0
+texture_normal = ExtResource("4_364at")
+texture_pressed = ExtResource("5_o3r2n")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LogrosButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 36.0
+offset_right = 646.0
+offset_bottom = 103.0
+texture_normal = ExtResource("6_8ahwi")
+texture_pressed = ExtResource("7_7xqrc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r1k0w")
+}
+
+[connection signal="pressed" from="Panel/RutinasButton" to="." method="_on_rutinas_button_pressed"]
