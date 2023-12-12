@@ -1,0 +1,229 @@
+[gd_scene load_steps=8 format=3 uid="uid://bufpkpnw7i1cy"]
+
+[ext_resource type="Script" path="res://Scripts/game_waiting.gd" id="1_h7cel"]
+[ext_resource type="VideoStream" path="res://Anim/SALUDO.ogv" id="1_wjhy6"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="2_tampn"]
+[ext_resource type="StyleBox" uid="uid://4rksfjqbtjli" path="res://botoncillo.tres" id="3_eqqyd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s06kk"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efbus"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57mmb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="GameWaiting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7cel")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -770.0
+offset_top = 1.0
+offset_right = 84.0
+offset_bottom = 485.0
+grow_horizontal = 0
+grow_vertical = 2
+stream = ExtResource("1_wjhy6")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Panel" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -176.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s06kk")
+
+[node name="Panel2" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1282.0
+offset_bottom = -1106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_efbus")
+
+[node name="Label2" type="Label" parent="bg/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -33.5
+offset_right = 99.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("2_tampn")
+theme_override_font_sizes/font_size = 55
+text = "B U F F P A L"
+
+[node name="Label2" type="Label" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -121.0
+offset_right = 295.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("2_tampn")
+theme_override_font_sizes/font_size = 50
+text = "¿Quieres volver a jugar?"
+horizontal_alignment = 1
+
+[node name="Label3" type="RichTextLabel" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -329.0
+offset_right = 145.0
+offset_bottom = -247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("2_tampn")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[shake amp=100 freq=5 level=20] PERDISTE [/shake]"
+scroll_active = false
+
+[node name="Button" type="Button" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -32.0
+offset_right = -87.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("3_eqqyd")
+theme_override_styles/hover = ExtResource("3_eqqyd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_57mmb")
+
+[node name="Label2" type="Label" parent="bg/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -30.5
+offset_right = 295.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("2_tampn")
+theme_override_font_sizes/font_size = 50
+text = "SI"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -32.0
+offset_right = 212.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("3_eqqyd")
+theme_override_styles/hover = ExtResource("3_eqqyd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_57mmb")
+
+[node name="Label2" type="Label" parent="bg/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -30.5
+offset_right = 295.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("2_tampn")
+theme_override_font_sizes/font_size = 50
+text = "NO"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="bg/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="bg/Button2" to="." method="_on_button_2_pressed"]

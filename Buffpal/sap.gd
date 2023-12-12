@@ -69,6 +69,8 @@ func swipe():
 
 func death():
 	#showScore("Tu puntaje es:" + str(jumpCount))
-	get_tree().reload_current_scene()
+	Transicion6.show()
+	Transicion6.change_scene("res://game_waiting.tscn")
+
 	
 

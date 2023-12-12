@@ -13,7 +13,6 @@ var swiping = false
 var threshold = 50
 var swipeDir = 0
 
-var jumpCount = 0
 const JUMP_VEL = 7
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -30,6 +29,7 @@ func _process(delta):
 			
 	position.z = lerpf(position.z, positions[curPos],delta*30)
 	if death_sensor.is_colliding():
+		get_tree().change_scene("res://game_waiting.tscn")
 		death()
 	
 	velocity.y -= gravity*delta
@@ -51,29 +51,21 @@ func swipe():
 						swipeDir = 1
 					else:
 						swipeDir = -1
-						jumpCount += 150
 				if abs(startSwipe.x-curSwipe.x) < threshold:
 					if startSwipe.y-curSwipe.y > 0 and is_on_floor():
 						velocity.y = JUMP_VEL
-						jumpCount += 150
 						
 				swiping = false
 	else:
 		swiping = false
 
 
-#func showScore(message: String):
-	#var errorAuth = $"../PopupPanel"
-	#errorAuth.get_node("Label").text = message
-	#errorAuth.popup_centered()
 
 func death():
-	#showScore("Tu puntaje es:" + str(jumpCount))
-	get_tree().reload_current_scene()
+	get_tree().change_scene("res://game_waiting.tscn")
+	print("muerto")
 	
 	
 	
 
 
-#func _on_button_pressed():
-	#get_tree().change_scene_to_file("res://scenes/InicioJuego.tscn")

@@ -23,3 +23,6 @@ func _on_casa_button_pressed():
 
 func _on_logros_button_pressed():
 	Transicion4.change_scene("res://ej_logros.tscn")
+
+func _on_button_pressed():
+	Transicion4.change_scene("res://ej_rutina_rec.tscn")

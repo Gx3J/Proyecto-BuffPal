@@ -7,6 +7,8 @@ func _ready():
 	Transicion2.hide()
 	Transicion3.hide()
 	Transicion4.hide()
+	Transicion5.hide()
+	Transicion6.hide()
 	
 	
 

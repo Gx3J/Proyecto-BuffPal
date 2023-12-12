@@ -1,0 +1,188 @@
+[gd_scene load_steps=8 format=3 uid="uid://yc2u24q64lvo"]
+
+[ext_resource type="Script" path="res://1_ej.gd" id="1_5li7v"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="1_mpnxn"]
+[ext_resource type="VideoStream" path="res://Anim/0000-0200.ogv" id="1_pkiwy"]
+[ext_resource type="Texture2D" uid="uid://coyfqyjjpvkwk" path="res://Icons/tempo.png" id="2_saco7"]
+[ext_resource type="Texture2D" uid="uid://dbkl3lr1bocq5" path="res://Icons/tempo_pressed.png" id="3_dc6gh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nequ3"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq74e"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[node name="1ej" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5li7v")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -715.0
+offset_top = -28.0
+offset_right = 139.0
+offset_bottom = 456.0
+grow_horizontal = 0
+grow_vertical = 2
+stream = ExtResource("1_pkiwy")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Panel" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -176.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nequ3")
+
+[node name="Label2" type="Label" parent="bg/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -12.5
+offset_right = 154.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("1_mpnxn")
+theme_override_font_sizes/font_size = 30
+text = "Siguiente ejercicio... 
+Pepe grillo en moto"
+
+[node name="RutinasB" type="TextureButton" parent="bg/Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -166.0
+offset_right = 50.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_saco7")
+texture_pressed = ExtResource("3_dc6gh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RutinasL" type="RichTextLabel" parent="bg/Panel/RutinasB"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.5
+offset_top = -31.0
+offset_right = 93.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_mpnxn")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] Continuar[/shake]"
+scroll_active = false
+
+[node name="Panel2" type="Panel" parent="bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1282.0
+offset_bottom = -1106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jq74e")
+
+[node name="Label2" type="Label" parent="bg/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -33.5
+offset_right = 99.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("1_mpnxn")
+theme_override_font_sizes/font_size = 55
+text = "B U F F P A L"
+
+[node name="Label2" type="Label" parent="bg"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.5
+offset_top = 275.0
+offset_right = 180.5
+offset_bottom = 464.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("1_mpnxn")
+theme_override_font_sizes/font_size = 50
+text = "ABDOMINALES
+x
+20"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="bg/Panel/RutinasB" to="." method="_on_rutinas_b_pressed"]

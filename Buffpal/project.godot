@@ -22,6 +22,9 @@ Transicion2="*res://cambio_2.tscn"
 varru="*res://Scripts/varrutina.gd"
 Transicion3="*res://cambio_3.tscn"
 Transicion4="*res://ej_loading.tscn"
+Global="*res://Scripts/global.gd"
+Transicion5="*res://cambio_ej.tscn"
+Transicion6="*res://transicion_gluten_free.tscn"
 
 [display]
 

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dndh1pptcod1l" path="res://Icons/casa_pressed.png" id="5_maxmy"]
 [ext_resource type="Texture2D" uid="uid://dctk7ko0ppfh5" path="res://Icons/trofeo.png" id="6_th5go"]
 [ext_resource type="Texture2D" uid="uid://cgywo40j3n6ha" path="res://Icons/trofeo_pressed.png" id="7_fnubw"]
-[ext_resource type="Texture2D" uid="uid://cs5fq10xcxt6h" path="res://icon.svg" id="10_22fky"]
+[ext_resource type="VideoStream" path="res://Anim/SALUDO.ogv" id="11_0mp24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gro04"]
 shader = ExtResource("1_mip1x")
@@ -34,25 +34,25 @@ shadow_size = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x5mf"]
 bg_color = Color(0.74902, 0.74902, 0.74902, 0.705882)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdua6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rqlbw"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw6ht"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i22mx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vl4f"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fuc7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04aal"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hngi"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qn30"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2o3mi"]
 
 [sub_resource type="Theme" id="Theme_2iyoa"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_pdua6")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_fw6ht")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_8vl4f")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_04aal")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_7qn30")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_rqlbw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_i22mx")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_1fuc7")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_5hngi")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_2o3mi")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txrov"]
-bg_color = Color(0.141176, 0.141176, 0.141176, 0.937255)
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -232,6 +232,26 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_172u1")
 
+[node name="Label2" type="Label" parent="bg/TextureRect/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -33.5
+offset_right = 139.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("1_oecjb")
+theme_override_font_sizes/font_size = 55
+text = "Ejercicios"
+
 [node name="Panel3" type="Panel" parent="bg/TextureRect"]
 layout_mode = 1
 anchors_preset = 14
@@ -274,10 +294,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_amoep")
 text = "   RUTINA
    .
    RECOMENDADA"
-icon = ExtResource("10_22fky")
 alignment = 0
 icon_alignment = 2
 expand_icon = true
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Button"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 61.0
+offset_right = 589.0
+offset_bottom = 251.0
+stream = ExtResource("11_0mp24")
+autoplay = true
+expand = true
+loop = true
+
 [connection signal="pressed" from="bg/TextureRect/Panel/CasaButton" to="." method="_on_casa_button_pressed"]
 [connection signal="pressed" from="bg/TextureRect/Panel/LogrosButton" to="." method="_on_logros_button_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

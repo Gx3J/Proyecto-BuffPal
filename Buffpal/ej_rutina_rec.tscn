@@ -1,0 +1,565 @@
+[gd_scene load_steps=28 format=3 uid="uid://ykl2v7kq178f"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_gx5im"]
+[ext_resource type="Script" path="res://Scripts/ej_rutina_rec.gd" id="1_o4b1v"]
+[ext_resource type="Texture2D" uid="uid://dpibucf8l5485" path="res://bgm4.png" id="2_ni3i4"]
+[ext_resource type="FontFile" uid="uid://du26a2te3yqen" path="res://fonts/Exo_2/static/Exo2-Black.ttf" id="3_67nxj"]
+[ext_resource type="Texture2D" uid="uid://coyfqyjjpvkwk" path="res://Icons/tempo.png" id="4_2fpma"]
+[ext_resource type="Texture2D" uid="uid://dbkl3lr1bocq5" path="res://Icons/tempo_pressed.png" id="5_il8ee"]
+[ext_resource type="Texture2D" uid="uid://b235qa3nhqnri" path="res://Icons/casa.png" id="6_14tsb"]
+[ext_resource type="Texture2D" uid="uid://dndh1pptcod1l" path="res://Icons/casa_pressed.png" id="7_m6c1a"]
+[ext_resource type="Texture2D" uid="uid://dctk7ko0ppfh5" path="res://Icons/trofeo.png" id="8_qj4y0"]
+[ext_resource type="Texture2D" uid="uid://cgywo40j3n6ha" path="res://Icons/trofeo_pressed.png" id="9_i57ll"]
+[ext_resource type="VideoStream" path="res://Anim/0000-0200.ogv" id="10_8kyhw"]
+[ext_resource type="StyleBox" uid="uid://c3ps2kq60cn41" path="res://ej_rutina_rec.tres" id="10_taq5l"]
+[ext_resource type="VideoStream" path="res://Anim/Flexion.ogv" id="11_0havd"]
+[ext_resource type="FontFile" uid="uid://c4o2rj33jvwcq" path="res://art/fondos/Exo2-Black.ttf" id="11_ekb5m"]
+[ext_resource type="VideoStream" path="res://Anim/BURPE_Y_FLEXION.ogv" id="12_675ae"]
+[ext_resource type="VideoStream" path="res://Anim/Mov_Pierna.ogv" id="13_s1047"]
+[ext_resource type="VideoStream" path="res://Anim/Tijera.ogv" id="14_s2420"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjl88"]
+shader = ExtResource("1_gx5im")
+shader_parameter/direction = Vector2(1, 1)
+shader_parameter/speed_scale = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xljqn"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8pur"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.972549)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwfpq"]
+bg_color = Color(0.74902, 0.74902, 0.74902, 0.705882)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdua6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw6ht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vl4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04aal"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qn30"]
+
+[sub_resource type="Theme" id="Theme_7o7q7"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_pdua6")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_fw6ht")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_8vl4f")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_04aal")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_7qn30")
+
+[node name="EjRutinaRec" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o4b1v")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.254902, 0.733333, 0.631373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+material = SubResource("ShaderMaterial_bjl88")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ni3i4")
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -176.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xljqn")
+
+[node name="RutinasLabel" type="RichTextLabel" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 24.0
+offset_right = -183.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_67nxj")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] RUTINAS[/shake]"
+scroll_active = false
+
+[node name="RutinasButton" type="TextureButton" parent="bg/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 123.0
+offset_bottom = 103.0
+texture_normal = ExtResource("4_2fpma")
+texture_pressed = ExtResource("5_il8ee")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CasaLabel" type="RichTextLabel" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.5
+offset_top = -68.0
+offset_right = 50.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_67nxj")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] CASA[/shake]"
+scroll_active = false
+
+[node name="LogrosLabel" type="RichTextLabel" parent="bg/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 178.5
+offset_top = 18.5
+offset_right = 345.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_67nxj")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] LOGROS[/shake]"
+scroll_active = false
+
+[node name="CasaButton" type="TextureButton" parent="bg/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 36.0
+offset_right = 393.0
+offset_bottom = 103.0
+texture_normal = ExtResource("6_14tsb")
+texture_pressed = ExtResource("7_m6c1a")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LogrosButton" type="TextureButton" parent="bg/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 36.0
+offset_right = 646.0
+offset_bottom = 103.0
+texture_normal = ExtResource("8_qj4y0")
+texture_pressed = ExtResource("9_i57ll")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel2" type="Panel" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1282.0
+offset_bottom = -1106.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r8pur")
+
+[node name="Label2" type="Label" parent="bg/TextureRect/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -33.5
+offset_right = 273.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("3_67nxj")
+theme_override_font_sizes/font_size = 55
+text = "Ejercicios a realizar:"
+
+[node name="Panel3" type="Panel" parent="bg/TextureRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -462.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fwfpq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="bg/TextureRect/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7o7q7")
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/TextureRect/Panel3/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="MarginContainer5" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MarginContainer11" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RutinasB" type="TextureButton" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_2fpma")
+texture_pressed = ExtResource("5_il8ee")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RutinasL" type="RichTextLabel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/RutinasB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = 32.5
+offset_right = 118.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_67nxj")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[shake amp=100 freq=5] Iniciar rutina[/shake]"
+scroll_active = false
+
+[node name="MarginContainer12" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label3" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("3_67nxj")
+theme_override_font_sizes/font_size = 40
+text = "Repeticiones: 2"
+
+[node name="MarginContainer13" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("10_taq5l")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -38.5
+offset_right = 321.0
+offset_bottom = 38.5
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_ekb5m")
+theme_override_font_sizes/font_size = 30
+text = "    ABDOMINALES
+    x 20"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -95.0
+offset_right = -5.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("10_8kyhw")
+autoplay = true
+expand = true
+loop = true
+
+[node name="MarginContainer6" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel2" type="Panel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("10_taq5l")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -38.5
+offset_right = 321.0
+offset_bottom = 38.5
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_ekb5m")
+theme_override_font_sizes/font_size = 30
+text = "    FLEXIONES
+    x 20"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -95.0
+offset_right = -5.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("11_0havd")
+autoplay = true
+expand = true
+loop = true
+
+[node name="MarginContainer7" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel3" type="Panel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("10_taq5l")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -38.5
+offset_right = 321.0
+offset_bottom = 38.5
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_ekb5m")
+theme_override_font_sizes/font_size = 30
+text = "    BURPEES
+    x 20"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -95.0
+offset_right = -5.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("12_675ae")
+autoplay = true
+expand = true
+loop = true
+
+[node name="MarginContainer8" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel4" type="Panel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("10_taq5l")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -95.0
+offset_right = -5.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("13_s1047")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -78.5
+offset_right = 321.0
+offset_bottom = 78.5
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_ekb5m")
+theme_override_font_sizes/font_size = 30
+text = "    LEVANTAMIENTO
+    DE PIERNAS
+    LATERAL
+    x 20"
+
+[node name="MarginContainer9" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel5" type="Panel" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("10_taq5l")
+
+[node name="Label" type="Label" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -58.5
+offset_right = 321.0
+offset_bottom = 58.5
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_ekb5m")
+theme_override_font_sizes/font_size = 30
+text = "    TIJERAS
+    DE PIERNAS
+    x 20"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -95.0
+offset_right = -5.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("14_s2420")
+autoplay = true
+expand = true
+loop = true
+
+[node name="MarginContainer10" type="MarginContainer" parent="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[connection signal="pressed" from="bg/TextureRect/Panel/RutinasButton" to="." method="_on_rutinas_button_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Panel/CasaButton" to="." method="_on_casa_button_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Panel/LogrosButton" to="." method="_on_logros_button_pressed"]
+[connection signal="pressed" from="bg/TextureRect/Panel3/ScrollContainer/VBoxContainer/RutinasB" to="." method="_on_rutinas_b_pressed"]
