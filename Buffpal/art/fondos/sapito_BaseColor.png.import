@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7vlfkt355vrw"
 path.s3tc="res://.godot/imported/sapito_BaseColor.png-a2d7ac94c3c740e9c63080e90479e5ce.s3tc.ctex"
+path.etc2="res://.godot/imported/sapito_BaseColor.png-a2d7ac94c3c740e9c63080e90479e5ce.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://art/fondos/sapito_BaseColor.png"
-dest_files=["res://.godot/imported/sapito_BaseColor.png-a2d7ac94c3c740e9c63080e90479e5ce.s3tc.ctex"]
+dest_files=["res://.godot/imported/sapito_BaseColor.png-a2d7ac94c3c740e9c63080e90479e5ce.s3tc.ctex", "res://.godot/imported/sapito_BaseColor.png-a2d7ac94c3c740e9c63080e90479e5ce.etc2.ctex"]
 
 [params]
 

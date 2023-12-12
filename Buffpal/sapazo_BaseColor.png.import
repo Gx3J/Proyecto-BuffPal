@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1wy4y1qulobb"
 path.s3tc="res://.godot/imported/sapazo_BaseColor.png-56ca912c723e611afe0dd39f65a709d5.s3tc.ctex"
+path.etc2="res://.godot/imported/sapazo_BaseColor.png-56ca912c723e611afe0dd39f65a709d5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://sapazo_BaseColor.png"
-dest_files=["res://.godot/imported/sapazo_BaseColor.png-56ca912c723e611afe0dd39f65a709d5.s3tc.ctex"]
+dest_files=["res://.godot/imported/sapazo_BaseColor.png-56ca912c723e611afe0dd39f65a709d5.s3tc.ctex", "res://.godot/imported/sapazo_BaseColor.png-56ca912c723e611afe0dd39f65a709d5.etc2.ctex"]
 
 [params]
 

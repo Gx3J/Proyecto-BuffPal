@@ -44,4 +44,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.536
 
 [node name="DeathSensor" type="RayCast3D" parent="sap"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0266441, 1.31713, -0.133557)
-target_position = Vector3(3, 0, 0)
+target_position = Vector3(2, 0, 0)

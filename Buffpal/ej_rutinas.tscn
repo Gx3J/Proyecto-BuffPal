@@ -304,6 +304,7 @@ offset_left = 254.0
 offset_top = 61.0
 offset_right = 589.0
 offset_bottom = 251.0
+mouse_filter = 1
 stream = ExtResource("11_0mp24")
 autoplay = true
 expand = true

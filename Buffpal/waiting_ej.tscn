@@ -158,7 +158,7 @@ theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("2_myl8x")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[shake amp=100 freq=5] 10[/shake]"
+text = "[shake amp=100 freq=5] 5[/shake]"
 scroll_active = false
 
 [node name="Timer" type="Timer" parent="."]
