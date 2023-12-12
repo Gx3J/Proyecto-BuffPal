@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvp3j3wv2bn35"]
+
+[ext_resource type="Script" path="res://scenes/InicioJuego.gd" id="1_u668e"]
+[ext_resource type="Texture2D" uid="uid://cgb1rxvtnjjk3" path="res://art/fondos/bgm2.png" id="2_cwmg4"]
+[ext_resource type="FontFile" uid="uid://c4o2rj33jvwcq" path="res://art/fondos/Exo2-Black.ttf" id="3_5ctmq"]
+
+[sub_resource type="Theme" id="Theme_jvx2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4l4sh"]
+bg_color = Color(0.254902, 0.733333, 0.631373, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="InicioJuego" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u668e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jvx2u")
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cwmg4")
+
+[node name="Button" type="Button" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -37.0
+offset_right = 98.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jugar"
+
+[node name="Panel" type="Panel" parent="ColorRect/TextureRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = 258.0
+offset_right = 2.0
+offset_bottom = 530.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = -135.0
+offset_right = 392.5
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("3_5ctmq")
+theme_override_font_sizes/font_size = 41
+text = "Has desbloqueado el 
+acceso al minujuego!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+transparent_bg = true
+size = Vector2i(10, 10)
+transparent = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_4l4sh")
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 6.0
+offset_bottom = 28.0
+
+[connection signal="pressed" from="ColorRect/TextureRect/Button" to="." method="_on_button_pressed"]
