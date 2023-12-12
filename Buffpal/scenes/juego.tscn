@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://cgd0qkgnstuy0"]
+
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_7eprk"]
+[ext_resource type="Script" path="res://scenes/juego.gd" id="1_rgqep"]
+[ext_resource type="PackedScene" uid="uid://p71xwawyruxj" path="res://modules/module1.tscn" id="2_foovf"]
+[ext_resource type="PackedScene" uid="uid://3sve2nrss2io" path="res://modules/module2.tscn" id="3_54n4n"]
+[ext_resource type="PackedScene" uid="uid://d2q8y0rtu2njt" path="res://modules/module3.tscn" id="4_ii3k0"]
+[ext_resource type="PackedScene" uid="uid://c78ayj4g08730" path="res://modules/module4.tscn" id="5_6qkjt"]
+[ext_resource type="PackedScene" uid="uid://urka8ho68bnr" path="res://modules/module5.tscn" id="6_d4cja"]
+[ext_resource type="PackedScene" uid="uid://c1fmo6ljcgjmy" path="res://sap.tscn" id="8_m1gmk"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_pl37p"]
+
+[sub_resource type="Sky" id="Sky_aqf0r"]
+sky_material = SubResource("PhysicalSkyMaterial_pl37p")
+
+[sub_resource type="Environment" id="Environment_jgbfd"]
+background_mode = 2
+sky = SubResource("Sky_aqf0r")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eux7q"]
+bg_color = Color(0.254902, 0.733333, 0.631373, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_rgqep")
+
+[node name="Level" type="Node3D" parent="."]
+script = ExtResource("1_7eprk")
+modules = Array[PackedScene]([ExtResource("6_d4cja"), ExtResource("2_foovf"), ExtResource("3_54n4n"), ExtResource("4_ii3k0"), ExtResource("5_6qkjt")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jgbfd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.702692, -0.656933, 0.273243, -0.0493662, 0.338099, 0.939815, -0.709779, -0.67389, 0.205149, 0, 0, 0)
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.11738e-08, 0.0415443, -0.999137, -1.46767e-08, 0.999137, 0.0415443, 1, 1.63746e-08, -4.05285e-08, -13.7789, 9.46361, 0)
+current = true
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+transparent_bg = true
+size = Vector2i(400, 200)
+transparent = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_eux7q")
+
+[node name="Button" type="Button" parent="PopupPanel"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 395.0
+offset_bottom = 195.0
+text = "Volver al menú"
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 395.0
+offset_bottom = 195.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sap" parent="." instance=ExtResource("8_m1gmk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.53674e-07, 9.53674e-07, -0.0433784)
+
+[node name="DeathSensor" type="RayCast3D" parent="sap"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0266441, 1.31713, -0.133557)
+target_position = Vector3(3, 0, 0)
