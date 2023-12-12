@@ -99,7 +99,7 @@ theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_67nxj")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = "[shake amp=100 freq=5] RUTINAS"
+text = "[shake amp=100 freq=5] RUTINAS[/shake]"
 scroll_active = false
 
 [node name="RutinasButton" type="TextureButton" parent="bg/Panel"]
@@ -120,9 +120,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -59.5
+offset_left = -59.0
 offset_top = -68.0
-offset_right = 45.5
+offset_right = 65.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -131,7 +131,7 @@ theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_67nxj")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = " [shake amp=100 freq=5] CASA"
+text = " [shake amp=100 freq=5] CASA [/shake]"
 scroll_active = false
 
 [node name="LogrosLabel" type="RichTextLabel" parent="bg/Panel"]
@@ -152,7 +152,7 @@ theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("3_67nxj")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
-text = " [shake amp=100 freq=5] LOGROS"
+text = " [shake amp=100 freq=5] LOGROS[/shake]"
 scroll_active = false
 
 [node name="CasaButton" type="TextureButton" parent="bg/Panel"]
